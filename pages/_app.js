@@ -34,7 +34,7 @@ function MyApp({ Component, pageProps, router }) {
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta
           name="viewport"
-          content="width=device-width, initial-scale=1, maximum-scale=3,user-scalable=yes"
+          content="width=device-width, initial-scale=1, maximum-scale=5"
         />
         <meta name="description" content="Description" />
         <meta name="keywords" content="Keywords" />
