@@ -5,8 +5,10 @@ import dynamic from "next/dynamic";
 const Home = (props) => {
   return (
     <>
-      <div>Pensilpatah next boilerplate</div>
-      <div>Env : {process.env.baseUrl}</div>
+      <section>
+        <h1>Pensilpatah next boilerplate</h1>
+        <h2>Env : {process.env.baseUrl}</h2>
+      </section>
     </>
   );
 };

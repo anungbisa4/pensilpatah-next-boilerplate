@@ -1,12 +1,12 @@
 {
-  "name": "transvision-pwa",
+  "name": "pensilpatah-next-boilerplate",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "TAILWIND_MODE=watch next dev -p 3005",
     "build": "next build",
     "build:vercel": "TAILWIND_MODE=build yarn build",
-    "start": "TAILWIND_MODE=build cross-env NODE_ENV=production PORT=3002 node server-vercel.js",
+    "start": "TAILWIND_MODE=build cross-env NODE_ENV=production PORT=3005 node server.js",
     "dev:test": "TAILWIND_MODE=watch PORT=3003 node server.js",
     "deploy:start": "TAILWIND_MODE=build yarn build && cross-env NODE_ENV=production PORT=3002 node server.js",
     "storybook": "start-storybook -p 6006",

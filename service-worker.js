@@ -131,7 +131,7 @@ registerRoute(
   "GET"
 );
 registerRoute(
-  /\/transvisionplus\/.*$/i,
+  /\/api\/.*$/i,
   new NetworkFirst({
     cacheName: "apis",
     networkTimeoutSeconds: 10,
