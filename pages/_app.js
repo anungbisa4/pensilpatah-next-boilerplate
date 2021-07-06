@@ -10,6 +10,9 @@ import "@/styles/globals.css";
 import "swiper/swiper-bundle.min.css";
 import "react-toastify/dist/ReactToastify.min.css";
 
+import useSWR, { SWRConfig } from "swr";
+import fetcher from "@/utils/fetcher";
+
 import { wrapper, initStore } from "@/store/store";
 
 function handleExitComplete() {
@@ -42,11 +45,29 @@ function MyApp({ Component, pageProps, router }) {
 
         {/* favicon */}
 
-        <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/favicon/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon/favicon-16x16.png"
+        />
         <link rel="manifest" href="/manifest.json" />
-        <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+        <link
+          rel="mask-icon"
+          href="/favicon/safari-pinned-tab.svg"
+          color="#5bbad5"
+        />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
 
@@ -64,17 +85,17 @@ function MyApp({ Component, pageProps, router }) {
           initial={false}
         >
           <PersistGate loading={<Loading />} persistor={store.__persistor}>
-              {/* <SWRConfig
-                value={{
-                  fetcher,
-                  onError: (err) => {
-                    console.error("err swr: ", err);
-                  },
-                }}
-              >
-                <Component {...pageProps} {...{ router }} key={router.route} />
-              </SWRConfig> */}
+            <SWRConfig
+              value={{
+                fetcher: (...args) => fetcher(...args).then((res) => res),
+                onError: (err) => {
+                  console.error("err swr: ", err);
+                },
+              }}
+            >
               <Component {...pageProps} {...{ router }} key={router.route} />
+            </SWRConfig>
+            {/* <Component {...pageProps} {...{ router }} key={router.route} /> */}
           </PersistGate>
         </AnimatePresence>
       </Provider>
