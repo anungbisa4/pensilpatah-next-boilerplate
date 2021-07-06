@@ -34,12 +34,8 @@ function MyApp({ Component, pageProps, router }) {
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta
           name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0"
+          content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=0"
         />
-        {/* <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, user-scalable=no"
-        /> */}
         <meta name="description" content="Description" />
         <meta name="keywords" content="Keywords" />
         <title>Pensilpatah next boilerplate</title>
