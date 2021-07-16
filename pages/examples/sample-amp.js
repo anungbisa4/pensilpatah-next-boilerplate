@@ -1,7 +1,15 @@
 export const config = { amp: true };
 
 function SampleAMP(props) {
-  return <h3>My AMP About Page!</h3>;
+  return (
+    <amp-img
+      width="300"
+      height="300"
+      src="/images/logo.png"
+      alt="a cool image"
+      layout="responsive"
+    />
+  );
 }
 
 export default SampleAMP;
