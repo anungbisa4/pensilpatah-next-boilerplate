@@ -1,7 +1,5 @@
 # Pensilpatah Next Boilerplate
 
-Pensilpatah Next Boilerplate
-
 ## Getting Started
 
 This project using NEXT JS and Tailwind
