@@ -1,4 +1,4 @@
-# Project Title
+# Pensilpatah Next Boilerplate
 
 Pensilpatah Next Boilerplate
 
