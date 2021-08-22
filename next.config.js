@@ -10,7 +10,8 @@ const nextConfig = {
     // You can, for example, get the latest git commit hash here
     return "-dlingo-secret-1234";
   },
-  assetPrefix: "http://1147483289.rsc.cdn77.org",
+  // You can use cdn in assetPrefix
+  // assetPrefix: "http://1147483289.rsc.cdn77.org",
   images: {
     domains: [],
   },
