@@ -1,8 +1,8 @@
-const withPlugins = require('next-compose-plugins')
-const withPWA = require('next-pwa')
-const withOptimizeImage = require('next-optimized-images')
-const runtimeCaching = require('next-pwa/cache')
-const path = require('path')
+const withPlugins = require("next-compose-plugins");
+const withPWA = require("next-pwa");
+const withOptimizeImage = require("next-optimized-images");
+const runtimeCaching = require("next-pwa/cache");
+const path = require("path");
 // const withOffline = require("next-offline");
 
 const nextConfig = {
@@ -17,6 +17,7 @@ const nextConfig = {
   },
   env: {
     baseUrl: process.env.NODE_BASE_URL,
+    baseUrlGraphql: "",
   },
   trailingSlash: false,
   exportPathMap: function () {
@@ -31,6 +32,48 @@ const nextConfig = {
   },
   devIndicators: {
     autoPrerender: false,
+  },
+  async headers() {
+    return [
+      {
+        source: "/(.*)?",
+
+        headers: [
+          {
+            key: "X-Frame-Options",
+
+            value: "SAMEORIGIN",
+          },
+
+          {
+            key: "Content-Security-Policy",
+
+            value: "frame-ancestors 'self'",
+          },
+          {
+            key: "Content-Security-Policy",
+            value: "default-src 'self'",
+          },
+          {
+            key: "Referrer-Policy",
+            value: "origin-when-cross-origin",
+          },
+          {
+            key: "X-Content-Type-Options",
+            value: "nosniff",
+          },
+          {
+            key: "Permissions-Policy",
+            value:
+              "camera=(), microphone=(), geolocation=(), interest-cohort=()",
+          },
+          {
+            key: "X-XSS-Protection",
+            value: "1; mode=block",
+          },
+        ],
+      },
+    ];
   },
 };
 
